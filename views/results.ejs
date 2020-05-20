@@ -1,0 +1,28 @@
+<!--show movies related to the search-->
+<%- include("partials/header") %>
+<link href="/stylesheets/results.css" rel="stylesheet" type="text/css">
+
+
+
+<div class="container">
+	<div class="row text-center">
+		<% data["results"].forEach(function(movie){%>
+		<div class="col-md-2 ">
+			<div class="movie">
+				<!--when we click on a  movie we go to a more specific page about the movie that shows more information-->
+				<a href="/results/<%=movie.id%>">
+			   		 <img id="poster" src="<%=basePosterURL + movie.poster_path %>">
+				</a>
+				
+				<p id="title" class="lead"><%=movie.title%></p>
+			</div>
+		</div>
+		<%});%>
+	</div>
+</div>
+
+
+
+<a href="/">Go back</a>
+
+<%- include("partials/footer") %>

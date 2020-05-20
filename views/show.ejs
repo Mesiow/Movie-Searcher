@@ -1,0 +1,49 @@
+<!-- this ejs file shows more information about a certain movie-->
+<!--add jumbotron etc..-->
+<%- include("partials/header") %>
+<link href="/stylesheets/show.css" rel="stylesheet" type="text/css">
+
+<div class="container">
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-lg-3">
+				<img class="poster" src="<%= basePosterURL + data.poster_path %>">
+			</div>
+			<div class="col-lg-6">
+				<p class="lead text-left" style=""><strong><%=data.original_title%><strong></p>
+				<p class="lead font-italic"><%=data.overview%></p>
+				
+
+				<p class="font-weight-bold">Duration: <span class="font-weight-light"><%=data.runtime%>min</span></p>
+
+				<p class="font-weight-bold">Release: <span class="font-weight-light"><%=data.release_date.substr(0, 4)%></span></p>
+
+				<p class="font-weight-bold">IMDb: <span class="font-weight-light"><%=data.vote_average%></span></p>
+
+				<p class="font-weight-bold">Genre:
+				<!--loop through genres and print them-->
+				<%data.genres.forEach(function(genre, index){%>
+					<!--last iteration, dont add comma-->
+					<% if(index === data.genres.length - 1){%>
+						<span class="font-weight-light"><%=genre.name%></span>
+					<%}else{%>
+   						<span class="font-weight-light"><%=genre.name%>, </span>
+   					<%}%>
+				<%});%>
+				</p>
+				
+				
+				
+
+			</div>
+		</div>
+		
+  		<!--<p class="lead text-right">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  		<hr class="my-4">
+ 		 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  		<p class="lead">
+ 	
+ 		 </p>-->
+
+	</div>
+</div>

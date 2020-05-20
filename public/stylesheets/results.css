@@ -1,0 +1,22 @@
+
+#poster{
+    border-radius: 15px;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+}
+
+#poster:hover{ /*increase poster size on hover*/
+    transform:scale(0.8);
+    cursor: pointer; /*change cursor to hand to indicate the movie is clickable*/
+    display: block;
+}
+
+.row{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#title{
+    color: #f0f5f4;
+}
+
