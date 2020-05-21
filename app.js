@@ -49,6 +49,7 @@ function getPosterURL(width){//return url of poster with allowed specified width
 }
 
 //listen 
-app.listen(3000, function(){
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
     console.log("server started");
 });
