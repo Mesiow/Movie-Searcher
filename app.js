@@ -12,6 +12,7 @@ app.use(express.static(__dirname + "/public")); //current directory + /public to
 const baseURL = "https://api.themoviedb.org/3/";
 const basePosterURL  = "http://image.tmdb.org/t/p/"; //add w92/, w154/, w185/ after /p/ for size of poster
 const APIKEY = process.env.APIKEY;
+console.log("ApiKey: " + APIKEY);
 
 
 
